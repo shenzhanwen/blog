@@ -7,25 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{url('/brand/cate')}}" method='post' enctype="multipart/form-data">
-    @csrf
-    
+    <form action="{{url('/brand/update/'.$res->id)}}" method='post'>
+    <input type="hidden" name="_token" value="{{csrf_token()}}">
         <table>
             <tr>
                 <td>姓名</td>
-                <td><input type="text" name='name'></td>
+                <td><input type="text" name='name' value="{{$res->name}}"></td>
             </tr>
             <tr>
                 <td>电话</td>
-                <td><input type="text" name='tel'></td>
+                <td><input type="text" name='tel' value="{{$res->tel}}"></td>
             </tr>
             <tr>
-            <td></td>
-            <td><input type="file" name='img' value='图片上传'></td>
-            </tr>
-           
-            <tr>
-                <td><input type="submit" value='提交'></td>
+                <td><input type="submit" value='修改'></td>
             </tr>
         </table>
     </form>

@@ -227,5 +227,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
-
+    'img_url'=>env('IMG_URL','http://upload.1812.com/'),
+    'pageSize'=>2,
 ];
